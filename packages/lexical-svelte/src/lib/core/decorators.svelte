@@ -36,8 +36,7 @@
 	});
 </script>
 
-{#each { length: decoratorKeys.length }, i}
-	{@const nodeKey = decoratorKeys[i]}
+{#each decoratorKeys as nodeKey (nodeKey)}
 	{@const { component: Component, props } = decorators[nodeKey]}
 	{@const element = editor.getElementByKey(nodeKey)}
 

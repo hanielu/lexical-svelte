@@ -12,16 +12,23 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"dependencies": {
+		"@lexical/history": "^0.31.0",
 		"lexical": "^0.31.0",
 		"lexical-svelte": "workspace:*"
 	},
 	"devDependencies": {
+		"@iconify/json": "^2.2.334",
 		"@sveltejs/adapter-auto": "^6.0.0",
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
+		"@unocss/preset-mini": "^66.1.0",
+		"@unocss/reset": "^66.1.0",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"typescript": "^5.0.0",
+		"unocss": "^66.1.0",
+		"unocss-preset-animations": "^1.2.1",
+		"unplugin-icons": "^22.1.0",
 		"vite": "^6.2.6"
 	}
 }

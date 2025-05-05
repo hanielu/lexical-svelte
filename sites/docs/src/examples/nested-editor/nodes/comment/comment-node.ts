@@ -1,19 +1,19 @@
+import CommentComponent from './comment-component.svelte';
 import type { Decorator } from 'lexical-svelte';
 import {
-	type LexicalEditor,
-	type SerializedEditor,
-	type Spread,
-	type SerializedLexicalNode,
-	DecoratorNode,
-	type NodeKey,
-	createEditor,
 	$createParagraphNode,
 	$createTextNode,
-	type LexicalNode
+	DecoratorNode,
+	createEditor,
+	type LexicalEditor,
+	type LexicalNode,
+	type NodeKey,
+	type SerializedEditor,
+	type SerializedLexicalNode,
+	type Spread
 } from 'lexical';
-
-import CommentComponent from './comment-component.svelte';
 import { initEditorContent$ } from '$lib/utils/state';
+
 export type Comment = LexicalEditor;
 export type SerializedComment = SerializedEditor;
 

@@ -2,15 +2,16 @@
 	"name": "lexical-svelte",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build && bun run prepack",
-		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''",
-		"prepack": "svelte-kit sync && svelte-package && publint",
+		"build": "pnpm package",
+		"dev": "pnpm watch",
+		"dev:svelte": "vite dev",
+		"watch": "svelte-package --watch",
+		"package": "svelte-kit sync && svelte-package && publint",
+		"prepublishOnly": "npm run package",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test:unit": "vitest",
-		"test": "bun run test:unit -- --run"
+		"test": "npm run test:unit -- --run"
 	},
 	"files": [
 		"dist",
@@ -53,9 +54,12 @@
 	"dependencies": {
 		"@lexical/dragon": "^0.31.0",
 		"@lexical/history": "^0.31.0",
+		"@lexical/link": "^0.31.0",
 		"@lexical/list": "^0.31.0",
 		"@lexical/markdown": "^0.31.0",
 		"@lexical/plain-text": "^0.31.0",
+		"@lexical/rich-text": "^0.31.0",
+		"@lexical/text": "^0.31.0",
 		"@lexical/utils": "^0.31.0",
 		"esm-env": "^1.2.2",
 		"lexical": "^0.31.0",

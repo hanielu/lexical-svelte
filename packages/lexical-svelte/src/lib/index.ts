@@ -9,6 +9,7 @@ export {
 	CheckListPlugin,
 	ClearEditorPlugin,
 	ClickableLinkPlugin,
+	OnChangePlugin,
 	type ListPluginProps
 } from './core/plugins/index.js';
 export {

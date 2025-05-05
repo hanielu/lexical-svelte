@@ -1,5 +1,11 @@
 import type { LexicalEditor, NodeKey } from 'lexical';
-import { $createNodeSelection, $getNodeByKey, $getSelection, $isNodeSelection, $setSelection } from 'lexical';
+import {
+	$createNodeSelection as createNodeSelection$,
+	$getNodeByKey as getNodeByKey$,
+	$getSelection as getSelection$,
+	$isNodeSelection as isNodeSelection$,
+	$setSelection as setSelection$
+} from 'lexical';
 import { useLexicalComposerContext } from '../composer-context.js';
 
 /**
@@ -12,7 +18,7 @@ import { useLexicalComposerContext } from '../composer-context.js';
 
 function isNodeSelected(editor: LexicalEditor, key: NodeKey): boolean {
 	return editor.getEditorState().read(() => {
-		const node = $getNodeByKey(key);
+		const node = getNodeByKey$(key);
 
 		if (node === null) {
 			return false; // Node doesn't exist, so it's not selected.
@@ -60,14 +66,14 @@ export function useLexicalNodeSelection(key: NodeKey): [() => boolean, (selected
 
 	const setSelected = (selected: boolean) => {
 		editor.update(() => {
-			let selection = $getSelection();
+			let selection = getSelection$();
 
-			if (!$isNodeSelection(selection)) {
-				selection = $createNodeSelection();
-				$setSelection(selection);
+			if (!isNodeSelection$(selection)) {
+				selection = createNodeSelection$();
+				setSelection$(selection);
 			}
 
-			if ($isNodeSelection(selection)) {
+			if (isNodeSelection$(selection)) {
 				if (selected) {
 					selection.add(key);
 				} else {
@@ -79,9 +85,9 @@ export function useLexicalNodeSelection(key: NodeKey): [() => boolean, (selected
 
 	const clearSelected = () => {
 		editor.update(() => {
-			const selection = $getSelection();
+			const selection = getSelection$();
 
-			if ($isNodeSelection(selection)) {
+			if (isNodeSelection$(selection)) {
 				selection.clear();
 			}
 		});

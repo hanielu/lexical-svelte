@@ -10,3 +10,4 @@ export { default as ClickableLinkPlugin } from './clickable-link-plugin.svelte';
 export { default as HorizontalRulePlugin } from './horizontal-rule-plugin/plugin.svelte';
 export { HorizontalRuleNode } from './horizontal-rule-plugin/node.svelte';
 export { default as MarkdownShortcutsPlugin } from './markdown-shortcuts-plugin.svelte';
+export { default as OnChangePlugin } from './on-change-plugin.svelte';

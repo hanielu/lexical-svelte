@@ -1,4 +1,5 @@
 <script lang="ts" module>
+	import type { Snippet } from 'svelte';
 	import {
 		type Klass,
 		type LexicalNode,
@@ -14,7 +15,6 @@
 		HISTORY_MERGE_TAG
 	} from 'lexical';
 	import { CAN_USE_DOM } from '@lexical/utils';
-	import type { Snippet } from 'svelte';
 	import { setComposerContext, createLexicalComposerContext } from './composer-context.js';
 
 	export type InitialEditorStateType = null | string | EditorState | ((editor: LexicalEditor) => void);

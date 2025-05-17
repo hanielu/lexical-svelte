@@ -7,7 +7,7 @@
 		ContentEditable,
 		LexicalErrorBoundary,
 		HistoryPlugin
-	} from 'lexical-svelte';
+	} from '@hvniel/lexical-svelte';
 	import { themeNestedEditor as theme } from '$lib/utils/theme';
 	import { getHistoryStateContext } from '../../context';
 

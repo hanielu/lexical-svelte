@@ -39,9 +39,15 @@ importers:
         specifier: ^8.0.0
         version: 8.31.1(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3)
 
-  packages/lexical-svelte:
+  packages/lexical-playground:
     dependencies:
-      '@lexical/dragon':
+      '@hvniel/lexical-svelte':
+        specifier: workspace:*
+        version: link:../lexical-svelte
+      '@lexical/code':
+        specifier: ^0.31.0
+        version: 0.31.0
+      '@lexical/hashtag':
         specifier: ^0.31.0
         version: 0.31.0
       '@lexical/history':
@@ -53,6 +59,85 @@ importers:
       '@lexical/list':
         specifier: ^0.31.0
         version: 0.31.0
+      '@lexical/mark':
+        specifier: ^0.31.0
+        version: 0.31.0
+      '@lexical/overflow':
+        specifier: ^0.31.0
+        version: 0.31.0
+      '@lexical/rich-text':
+        specifier: ^0.31.0
+        version: 0.31.0
+      '@lexical/selection':
+        specifier: ^0.31.0
+        version: 0.31.0
+      '@lexical/table':
+        specifier: ^0.31.0
+        version: 0.31.0
+      '@lexical/utils':
+        specifier: ^0.31.0
+        version: 0.31.0
+      lexical:
+        specifier: ^0.31.0
+        version: 0.31.0
+    devDependencies:
+      '@sveltejs/adapter-auto':
+        specifier: ^6.0.0
+        version: 6.0.0(@sveltejs/kit@2.20.8(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.28.2)(vite@6.3.4(jiti@2.4.2)))(svelte@5.28.2)(vite@6.3.4(jiti@2.4.2)))
+      '@sveltejs/kit':
+        specifier: ^2.16.0
+        version: 2.20.8(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.28.2)(vite@6.3.4(jiti@2.4.2)))(svelte@5.28.2)(vite@6.3.4(jiti@2.4.2))
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^5.0.0
+        version: 5.0.3(svelte@5.28.2)(vite@6.3.4(jiti@2.4.2))
+      '@testing-library/jest-dom':
+        specifier: ^6.6.3
+        version: 6.6.3
+      '@testing-library/svelte':
+        specifier: ^5.2.4
+        version: 5.2.7(svelte@5.28.2)(vite@6.3.4(jiti@2.4.2))(vitest@3.1.2(jiti@2.4.2)(jsdom@26.1.0))
+      jsdom:
+        specifier: ^26.0.0
+        version: 26.1.0
+      svelte:
+        specifier: ^5.0.0
+        version: 5.28.2
+      svelte-check:
+        specifier: ^4.0.0
+        version: 4.1.7(picomatch@4.0.2)(svelte@5.28.2)(typescript@5.8.3)
+      typescript:
+        specifier: ^5.0.0
+        version: 5.8.3
+      vite:
+        specifier: ^6.2.6
+        version: 6.3.4(jiti@2.4.2)
+      vitest:
+        specifier: ^3.0.0
+        version: 3.1.2(jiti@2.4.2)(jsdom@26.1.0)
+
+  packages/lexical-svelte:
+    dependencies:
+      '@lexical/devtools-core':
+        specifier: ^0.31.0
+        version: 0.31.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@lexical/dragon':
+        specifier: ^0.31.0
+        version: 0.31.0
+      '@lexical/history':
+        specifier: ^0.31.0
+        version: 0.31.0
+      '@lexical/html':
+        specifier: ^0.31.0
+        version: 0.31.0
+      '@lexical/link':
+        specifier: ^0.31.0
+        version: 0.31.0
+      '@lexical/list':
+        specifier: ^0.31.0
+        version: 0.31.0
+      '@lexical/mark':
+        specifier: ^0.31.0
+        version: 0.31.0
       '@lexical/markdown':
         specifier: ^0.31.0
         version: 0.31.0
@@ -60,6 +145,9 @@ importers:
         specifier: ^0.31.0
         version: 0.31.0
       '@lexical/rich-text':
+        specifier: ^0.31.0
+        version: 0.31.0
+      '@lexical/table':
         specifier: ^0.31.0
         version: 0.31.0
       '@lexical/text':
@@ -120,15 +208,15 @@ importers:
 
   sites/docs:
     dependencies:
+      '@hvniel/lexical-svelte':
+        specifier: workspace:*
+        version: link:../../packages/lexical-svelte
       '@lexical/history':
         specifier: ^0.31.0
         version: 0.31.0
       lexical:
         specifier: ^0.31.0
         version: 0.31.0
-      lexical-svelte:
-        specifier: workspace:*
-        version: link:../../packages/lexical-svelte
     devDependencies:
       '@iconify/json':
         specifier: ^2.2.334
@@ -546,8 +634,17 @@ packages:
   '@lexical/code@0.31.0':
     resolution: {integrity: sha512-a2Uvy7RT/oNVzspnHhZCGtb0f0jVaxMtg3OVyTgRTAQCxrYXT6eN1oBCWaPXKRFi9YDsOusb1cvnfnsBbqO0nw==}
 
+  '@lexical/devtools-core@0.31.0':
+    resolution: {integrity: sha512-Or0A8xtOPhlFchkqLf4SrAjQzsYhIh/004MgEy7InQrmT9GxG6S0YE9RsHHT+aJCel1wNOlNSJVlwfdyBjXCZg==}
+    peerDependencies:
+      react: '>=17.x'
+      react-dom: '>=17.x'
+
   '@lexical/dragon@0.31.0':
     resolution: {integrity: sha512-ViUH++ahXNHRpyfGqz5C3/59I+k4yqTS7nUzrsE7L2gFt84twPIb+8hlGu+WxzqMpY+kx8C38mj3qUrcOP/UqQ==}
+
+  '@lexical/hashtag@0.31.0':
+    resolution: {integrity: sha512-7dX0muZQjMLcRlXTh7Fx+FiGpcIQfANDfyAFYNaJrY+WUpZpTQ8L9w0EZ284G/aDNd5tQLdRgkd651A7D0VxFA==}
 
   '@lexical/history@0.31.0':
     resolution: {integrity: sha512-GqMrooznsR108GfqohtXroLGWzYRVYh6pbCYAgocq/LJPKet+kbbDT/AAEqvqGn/ohke0wama0qmjDITx30IcA==}
@@ -561,8 +658,14 @@ packages:
   '@lexical/list@0.31.0':
     resolution: {integrity: sha512-2OFnAWmvnFYixFynw+cTwZzoAGwgQogCvy2grVxlwxGnoLsFdiNDqD9+OM9WloorYWnJJE/U3ljKY/96AHTAag==}
 
+  '@lexical/mark@0.31.0':
+    resolution: {integrity: sha512-Zb6P4yDP5o04FUTD38fls5no+szujrkwxCjKVuAP5eweFoHzH52kSrI4SpBTOBJXcxdH5XHXdFTFthgX+L3uuQ==}
+
   '@lexical/markdown@0.31.0':
     resolution: {integrity: sha512-8sZajsAnd5hFNOgaomyhZ7SmHLO7mmtQAKrt0Jxk/blgjT8zbJoP268Kfd+IBbmsA8lkDjngGKaQ6ntcNB7gmg==}
+
+  '@lexical/overflow@0.31.0':
+    resolution: {integrity: sha512-4aPyvmIjXh6TSTR6rgwg/riuOR6Zhf0iyEyAiG+zo7fyD+OkEfQbrMu3Xu1+ZwmueqnIqiAaUR/ViXmYeD8DPQ==}
 
   '@lexical/plain-text@0.31.0':
     resolution: {integrity: sha512-mR31SLHksk2o88Fn22l/wH3hTrEjdk1O7LGSORZiqJWNB8jAorjTuE0aYLE81Wu+41AjVOktqGxIG+kFPc+lWg==}
@@ -2060,8 +2163,17 @@ packages:
     resolution: {integrity: sha512-RmkhL8CAyCRPXCE28MMH0z2PNWQBNk2Q09ZdxM9IOOXwxwZbN+qbWaatPkdkWIKL2ZVDImrN/pK5HTRz2PcS4g==}
     engines: {node: '>= 0.8'}
 
+  react-dom@19.1.0:
+    resolution: {integrity: sha512-Xs1hdnE+DyKgeHJeJznQmYMIBG3TKIHJJT95Q58nHLSrElKlGQqDTR2HQ9fx5CN/Gk6Vh/kupBTDLU11/nDk/g==}
+    peerDependencies:
+      react: ^19.1.0
+
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
+
+  react@19.1.0:
+    resolution: {integrity: sha512-FS+XFBNvn3GTAWq26joslQgWNoFu08F4kl0J4CgdNKADkdSGXQyTCnKteIAJy96Br6YbpEU1LSzV5dYtjMkMDg==}
+    engines: {node: '>=0.10.0'}
 
   read-yaml-file@1.1.0:
     resolution: {integrity: sha512-VIMnQi/Z4HT2Fxuwg5KrY174U1VdUIASQVWXXyqtNRtxSr9IYkn1rsI6Tb6HsrHCmB7gVpNwX6JxPTHcH6IoTA==}
@@ -2124,6 +2236,9 @@ packages:
   saxes@6.0.0:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==}
     engines: {node: '>=v12.22.7'}
+
+  scheduler@0.26.0:
+    resolution: {integrity: sha512-NlHwttCI/l5gCPR3D1nNXtWABUmBwvZpEQiD4IXSbIDq8BzLIK/7Ir5gTFSGZDUu37K5cMNp0hFtzO38sC7gWA==}
 
   semver@7.7.1:
     resolution: {integrity: sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==}
@@ -2981,8 +3096,24 @@ snapshots:
       lexical: 0.31.0
       prismjs: 1.30.0
 
+  '@lexical/devtools-core@0.31.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@lexical/html': 0.31.0
+      '@lexical/link': 0.31.0
+      '@lexical/mark': 0.31.0
+      '@lexical/table': 0.31.0
+      '@lexical/utils': 0.31.0
+      lexical: 0.31.0
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+
   '@lexical/dragon@0.31.0':
     dependencies:
+      lexical: 0.31.0
+
+  '@lexical/hashtag@0.31.0':
+    dependencies:
+      '@lexical/utils': 0.31.0
       lexical: 0.31.0
 
   '@lexical/history@0.31.0':
@@ -3007,6 +3138,11 @@ snapshots:
       '@lexical/utils': 0.31.0
       lexical: 0.31.0
 
+  '@lexical/mark@0.31.0':
+    dependencies:
+      '@lexical/utils': 0.31.0
+      lexical: 0.31.0
+
   '@lexical/markdown@0.31.0':
     dependencies:
       '@lexical/code': 0.31.0
@@ -3015,6 +3151,10 @@ snapshots:
       '@lexical/rich-text': 0.31.0
       '@lexical/text': 0.31.0
       '@lexical/utils': 0.31.0
+      lexical: 0.31.0
+
+  '@lexical/overflow@0.31.0':
+    dependencies:
       lexical: 0.31.0
 
   '@lexical/plain-text@0.31.0':
@@ -4640,7 +4780,14 @@ snapshots:
       iconv-lite: 0.6.3
       unpipe: 1.0.0
 
+  react-dom@19.1.0(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+      scheduler: 0.26.0
+
   react-is@17.0.2: {}
+
+  react@19.1.0: {}
 
   read-yaml-file@1.1.0:
     dependencies:
@@ -4724,6 +4871,8 @@ snapshots:
   saxes@6.0.0:
     dependencies:
       xmlchars: 2.2.0
+
+  scheduler@0.26.0: {}
 
   semver@7.7.1: {}
 

@@ -1,6 +1,6 @@
 <script lang="ts" module>
 	import { debounce } from '$lib/utils/debounce';
-	import { useLexicalComposerContext } from 'lexical-svelte';
+	import { useLexicalComposerContext } from '@hvniel/lexical-svelte';
 	import { getContext, setContext } from 'svelte';
 
 	const AutoSaveKey = Symbol('auto-save');

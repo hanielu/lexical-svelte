@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { RichTextPlugin, LexicalErrorBoundary, ContentEditable, HistoryPlugin } from 'lexical-svelte';
+	import { RichTextPlugin, LexicalErrorBoundary, ContentEditable, HistoryPlugin } from '@hvniel/lexical-svelte';
 	import { getHistoryStateContext } from './context';
 
 	const historyState = getHistoryStateContext();

@@ -1,58 +1,87 @@
-# Svelte library
+# `@hvniel/lexical-svelte`
 
-Everything you need to build a Svelte library, powered by [`sv`](https://npmjs.com/package/sv).
+[![Stable release](https://img.shields.io/npm/v/@hvniel/lexical-svelte.svg)](https://npm.im/@hvniel/lexical-svelte)
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+This package provides a set of components and hooks for Lexical that allow for text editing in Svelte applications.
 
-## Creating a project
+## Getting started
 
-If you're seeing this, you've probably already done this step. Congrats!
+Install `lexical` and `@hvniel/lexical-svelte`:
 
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+```
+npm install lexical @hvniel/lexical-svelte
 ```
 
-## Developing
+## Usage
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Below is an example of a basic plain text editor using lexical and @hvniel/lexical-svelte:
 
-```bash
-npm run dev
+### App.svelte
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```svelte
+<script>
+	import { $getRoot as getRoot$, $getSelection as getSelection$ } from 'lexical';
+	import { LexicalComposer, PlainTextPlugin, ContentEditable, HistoryPlugin, OnChangePlugin, useLexicalComposerContext } from '@hvniel/lexical-svelte';
+
+	const theme = {
+		// Theme styling goes here
+		...
+	}
+
+	// Catch any errors that occur during Lexical updates and log them
+	// or throw them as needed. If you don't throw them, Lexical will
+	// try to recover gracefully without losing user data.
+	function onError(error) {
+		throw error;
+	}
+
+	const initialConfig = {
+		namespace: 'MyEditor',
+		theme,
+		onError
+	}
+
+	// When the editor changes, you can get notified via the
+	// LexicalOnChangePlugin!
+	function onChange(editorState) {
+		editorState.read(() => {
+			// Read the contents of the EditorState here.
+			const root = getRoot$();
+			const selection = getSelection$();
+
+			console.log(root, selection);
+		});
+	}
+</script>
+
+<LexicalComposer {initialConfig}>
+	<PlainTextPlugin>
+		{#snippet contentEditable()}
+			<ContentEditable />
+		{/snippet}
+	</PlainTextPlugin>
+	<HistoryPlugin />
+	<OnChangePlugin {onChange} />
+	<CustomAutoFocusPlugin />
+</LexicalComposer>
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+### CustomAutoFocusPlugin.svelte
 
-## Building
+```svelte
+<!-- Lexical Svelte plugins are Svelte components, which makes them
+highly composable. Furthermore, you can lazy load plugins if
+desired, so you don't pay the cost for plugins until you
+actually use them. -->
 
-To build your library:
+<script>
+	import { useLexicalComposerContext } from '@hvniel/lexical-svelte';
 
-```bash
-npm run package
-```
+	const [editor] = useLexicalComposerContext();
 
-To create a production version of your showcase app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
+	$effect(() => {
+		// Focus the editor when the effect fires!
+		editor.focus();
+	});
+</script>
 ```

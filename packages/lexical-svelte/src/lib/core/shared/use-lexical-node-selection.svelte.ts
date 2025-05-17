@@ -48,7 +48,7 @@ export function useLexicalNodeSelection(key: NodeKey): [() => boolean, (selected
 	const editor = useLexicalComposerContext()[0];
 
 	// State to track whether the node is currently selected.
-	let isSelected = $state(isNodeSelected(editor, key));
+	let isSelected = $state.raw(isNodeSelected(editor, key));
 
 	$effect(() => {
 		let isMounted = true;

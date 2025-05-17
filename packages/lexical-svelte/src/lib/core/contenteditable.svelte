@@ -65,7 +65,7 @@
 	const editor = useLexicalComposerContext()[0];
 	const showPlaceholder = useCanShowPlaceholder(editor);
 
-	let isEditable = $state(editor.isEditable());
+	let isEditable = $state.raw(editor.isEditable());
 
 	$effect(() => {
 		// defaultView is required for a root element.

@@ -4,3 +4,5 @@ export { default as LexicalNestedComposer } from './nested-composer.svelte';
 export { ErrorBoundary as LexicalErrorBoundary } from './error-boundary.js';
 export { type Decorator } from './decorators.svelte';
 export { useLexicalComposerContext } from './composer-context.js';
+export { useLexicalEditable } from './use-lexical-editable.js';
+export { useLexicalSubscription } from './use-lexical-subscription.svelte.js';

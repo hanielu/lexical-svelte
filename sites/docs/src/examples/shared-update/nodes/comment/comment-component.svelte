@@ -7,7 +7,7 @@
 		ContentEditable,
 		LexicalErrorBoundary,
 		OnChangePlugin
-	} from 'lexical-svelte';
+	} from '@hvniel/lexical-svelte';
 	import { themeNestedEditor as theme } from '$lib/utils/theme';
 	import { getAutoSaveContext } from '../../context.svelte';
 

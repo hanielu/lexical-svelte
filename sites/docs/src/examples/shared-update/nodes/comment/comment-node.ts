@@ -1,5 +1,5 @@
 import CommentComponent from './comment-component.svelte';
-import type { Decorator } from 'lexical-svelte';
+import type { Decorator } from '@hvniel/lexical-svelte';
 import {
 	$createParagraphNode,
 	$createTextNode,

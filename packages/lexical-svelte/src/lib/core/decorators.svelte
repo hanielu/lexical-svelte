@@ -19,14 +19,14 @@
 
 	let { editor, errorBoundary }: DecoratorProps = $props();
 
-	let decorators = $state<Record<NodeKey, Decorator<Component>>>(editor.getDecorators<Decorator<Component>>());
+	let decorators = $state.raw<Record<NodeKey, Decorator<Component>>>(editor.getDecorators());
 	const decoratorKeys = $derived(Object.keys(decorators));
 
 	$effect(() => {
 		// If the content editable mounts before the subscription is added, then
 		// nothing will be rendered on initial pass. We can get around that by
 		// ensuring that we set the value.
-		decorators = editor.getDecorators<Decorator<Component>>();
+		decorators = editor.getDecorators();
 
 		return editor.registerDecoratorListener<Decorator<Component>>((nextDecorators) => {
 			flushSync(() => {

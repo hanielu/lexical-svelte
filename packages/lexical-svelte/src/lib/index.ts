@@ -10,6 +10,8 @@ export {
 	ClearEditorPlugin,
 	ClickableLinkPlugin,
 	OnChangePlugin,
+	HorizontalRulePlugin,
+	HorizontalRuleNode,
 	type ListPluginProps
 } from './core/plugins/index.js';
 export {
@@ -18,6 +20,8 @@ export {
 	LexicalNestedComposer,
 	LexicalErrorBoundary,
 	useLexicalComposerContext,
+	useLexicalEditable,
+	useLexicalSubscription,
 	type InitialConfigType,
 	type InitialEditorStateType,
 	type Decorator

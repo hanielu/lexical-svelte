@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { RichTextPlugin, LexicalErrorBoundary, ContentEditable, OnChangePlugin } from 'lexical-svelte';
+	import { RichTextPlugin, LexicalErrorBoundary, ContentEditable, OnChangePlugin } from '@hvniel/lexical-svelte';
 	import { getAutoSaveContext } from './context.svelte';
 
 	const emitUpdate = getAutoSaveContext();

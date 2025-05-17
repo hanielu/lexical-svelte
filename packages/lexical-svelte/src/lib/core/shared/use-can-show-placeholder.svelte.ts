@@ -9,7 +9,7 @@ function canShowPlaceholderFromCurrentEditorState(editor: LexicalEditor) {
 }
 
 export function useCanShowPlaceholder(editor: LexicalEditor) {
-	let canShowPlaceholder = $state(canShowPlaceholderFromCurrentEditorState(editor));
+	let canShowPlaceholder = $state.raw(canShowPlaceholderFromCurrentEditorState(editor));
 
 	function resetCanShowPlaceholder() {
 		const currentCanShowPlaceholder = canShowPlaceholderFromCurrentEditorState(editor);

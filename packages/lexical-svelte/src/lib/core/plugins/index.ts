@@ -11,3 +11,6 @@ export { default as HorizontalRulePlugin } from './horizontal-rule-plugin/plugin
 export { HorizontalRuleNode } from './horizontal-rule-plugin/node.svelte';
 export { default as MarkdownShortcutsPlugin } from './markdown-shortcuts-plugin.svelte';
 export { default as OnChangePlugin } from './on-change-plugin.svelte';
+export { default as TablePlugin, type TablePluginProps } from './table-plugin.svelte';
+export { default as TreeView } from './tree-view/tree-view-plugin.svelte';
+export { default as TreeViewCore } from './tree-view/tree-view.svelte';

@@ -1,5 +1,5 @@
 {
-	"name": "lexical-svelte",
+	"name": "@hvniel/lexical-svelte",
 	"version": "0.0.1",
 	"scripts": {
 		"build": "pnpm package",
@@ -49,16 +49,23 @@
 		"vitest": "^3.0.0"
 	},
 	"keywords": [
-		"svelte"
+		"svelte",
+		"lexical",
+		"editor",
+		"rich-text"
 	],
 	"dependencies": {
+		"@lexical/devtools-core": "^0.31.0",
 		"@lexical/dragon": "^0.31.0",
 		"@lexical/history": "^0.31.0",
+		"@lexical/html": "^0.31.0",
 		"@lexical/link": "^0.31.0",
 		"@lexical/list": "^0.31.0",
+		"@lexical/mark": "^0.31.0",
 		"@lexical/markdown": "^0.31.0",
 		"@lexical/plain-text": "^0.31.0",
 		"@lexical/rich-text": "^0.31.0",
+		"@lexical/table": "^0.31.0",
 		"@lexical/text": "^0.31.0",
 		"@lexical/utils": "^0.31.0",
 		"esm-env": "^1.2.2",
